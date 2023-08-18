@@ -2,5 +2,5 @@
 ## Обо мне
 Меня зовут Борис сейчас я оканчиваю курсы SkyPro по специальности "Инженер по тестированию" уже обзавёлся полезными знаниями и навыками что бы приступать к стажеровке.
 ## Навыки и технологии
-Jira, Confluence, qase.io, SQL, PosgreSQL, Postman, Swagger, Trello,
-SoapUI, Git, Chrome DevTools.
+Jira, Confluence, qase.io, SQL, PGadmin, Postman, Swagger, Git, Chrome DevTools.
+
