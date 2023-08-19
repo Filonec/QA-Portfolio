@@ -41,4 +41,10 @@ Jira, Confluence, qase.io, SQL, PGadmin, Postman, Swagger, Git, Chrome DevTools.
 ## SQL 
 
 [Задание 1](https://docs.google.com/document/d/1I9J98aY6B1vC8v4Qxl8sO5lob9nxxLt17ue0q_LDH04/edit)
+
 [Задание 2](https://docs.google.com/document/d/1a3k8JsjY704EXT-WqXIC9GnNvOXvylpOINE3RSPcdno/edit)
+
+## Моя почта
+
+boris_filonec@mail.ru
+
