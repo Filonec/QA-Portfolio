@@ -1,0 +1,1202 @@
+{
+	"info": {
+		"_postman_id": "819589c4-5cb1-404c-9085-54cea18c24b3",
+		"name": "Курсовая №2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27177491",
+		"_collection_link": "https://cloudy-shadow-488566.postman.co/workspace/eecd24cd-9b02-40d1-838c-0bc4518068c5/collection/27177491-819589c4-5cb1-404c-9085-54cea18c24b3?action=share&creator=27177491&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Создание события",
+			"item": [
+				{
+					"name": "Создание личного события с валидными данными на прошлый год",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var key = \"PersenalID\"",
+									"var value = pm.response.json().data.payload.id",
+									"pm.collectionVariables.set(key, value);",
+									"",
+									"var key = \"startAt\"",
+									"var value = pm.response.json().data.startAt",
+									"pm.collectionVariables.set(key, value);",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token_global={{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"backgroundColor\": \"#F4F5F6\",\n    \"color\": \"#81888D\",\n    \"description\": \"Филипов\",\n    \"title\": \"Ф Петров\",\n    \"startAt\": \"2022-06-26T15:00:00+05:00\",\n    \"endAt\": \"2022-06-26T15:30:00+05:00\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}createPersonal",
+							"host": [
+								"{{baseURL}}createPersonal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Создание личного события с валидными данными на прошлый месяц",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var key = \"PersenalID\"",
+									"var value = pm.response.json().data.payload.id",
+									"pm.collectionVariables.set(key, value);",
+									"",
+									"var key = \"startAt\"",
+									"var value = pm.response.json().data.startAt",
+									"pm.collectionVariables.set(key, value);",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token_global={{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"backgroundColor\": \"#F4F5F6\",\n    \"color\": \"#81888D\",\n    \"description\": \"Филипов\",\n    \"title\": \"Ф Петров\",\n    \"startAt\": \"2023-05-26T15:00:00+05:00\",\n    \"endAt\": \"2023-05-26T15:30:00+05:00\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}createPersonal",
+							"host": [
+								"{{baseURL}}createPersonal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Создание личного события с валидными данными с сегодняшней датой, но уже прошедшим временем",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var key = \"PersenalID\"",
+									"var value = pm.response.json().data.payload.id",
+									"pm.collectionVariables.set(key, value);",
+									"",
+									"var key = \"startAt\"",
+									"var value = pm.response.json().data.startAt",
+									"pm.collectionVariables.set(key, value);",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token_global={{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"backgroundColor\": \"#F4F5F6\",\n    \"color\": \"#81888D\",\n    \"description\": \"Филипов\",\n    \"title\": \"Ф Петров\",\n    \"startAt\": \"2023-06-27T12:00:00+05:00\",\n    \"endAt\": \"2023-06-27T12:30:00+05:00\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}createPersonal",
+							"host": [
+								"{{baseURL}}createPersonal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Создание личного события с валидными данными с датой в следующем году",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var key = \"PersenalID\"",
+									"var value = pm.response.json().data.payload.id",
+									"pm.collectionVariables.set(key, value);",
+									"",
+									"var key = \"startAt\"",
+									"var value = pm.response.json().data.startAt",
+									"pm.collectionVariables.set(key, value);",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token_global={{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"backgroundColor\": \"#F4F5F6\",\n    \"color\": \"#81888D\",\n    \"description\": \"Филипов\",\n    \"title\": \"Ф Петров\",\n    \"startAt\": \"2024-06-26T15:00:00+05:00\",\n    \"endAt\": \"2024-06-26T15:30:00+05:00\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}createPersonal",
+							"host": [
+								"{{baseURL}}createPersonal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Создание личного события с валидными данными с датой в следующем месяце",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var key = \"PersenalID\"",
+									"var value = pm.response.json().data.payload.id",
+									"pm.collectionVariables.set(key, value);",
+									"",
+									"var key = \"startAt\"",
+									"var value = pm.response.json().data.startAt",
+									"pm.collectionVariables.set(key, value);",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token_global={{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"backgroundColor\": \"#F4F5F6\",\n    \"color\": \"#81888D\",\n    \"description\": \"Филипов\",\n    \"title\": \"Ф Петров\",\n    \"startAt\": \"2023-07-26T12:00:00+05:00\",\n    \"endAt\": \"2023-07-26T12:30:00+05:00\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}createPersonal",
+							"host": [
+								"{{baseURL}}createPersonal"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Редактирование личного события",
+			"item": [
+				{
+					"name": "Редактирование только имени в названии",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var key = \"PersenalID\"",
+									"var value = pm.response.json().data.payload.id",
+									"pm.collectionVariables.set(key, value);",
+									"",
+									"var key = \"startAt\"",
+									"var value = pm.response.json().data.startAt",
+									"pm.collectionVariables.set(key, value);",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token_global={{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"backgroundColor\": \"#F4F5F6\",\n    \"color\": \"#81888D\",\n    \"description\": \"Филипов 13\",\n    \"title\": \"Курсовая 2.0\",\n    \"startAt\": \"2022-09-13T13:00:00+05:00\",\n    \"endAt\": \"2022-09-13T13:30:00+05:00\",\n    \"id\": {{PersenalID}},\n    \"oldStartAt\": \"{{startAt}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}updatePersonal",
+							"host": [
+								"{{baseURL}}updatePersonal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Редактирование только даты (из настоящего в будущее)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var key = \"PersenalID\"",
+									"var value = pm.response.json().data.payload.id",
+									"pm.collectionVariables.set(key, value);",
+									"",
+									"var key = \"startAt\"",
+									"var value = pm.response.json().data.startAt",
+									"pm.collectionVariables.set(key, value);",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token_global={{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"backgroundColor\": \"#F4F5F6\",\n    \"color\": \"#81888D\",\n    \"description\": \"Филипов 13\",\n    \"title\": \"Курсовая 2.0\",\n    \"startAt\": \"2023-06-30T12:00:00+05:00\",\n    \"endAt\": \"2023-06-30T12:30:00+05:00\",\n    \"id\": {{PersenalID}},\n    \"oldStartAt\": \"{{startAt}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}updatePersonal",
+							"host": [
+								"{{baseURL}}updatePersonal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Редактирование только даты (из прошлого в будущее)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var key = \"PersenalID\"",
+									"var value = pm.response.json().data.payload.id",
+									"pm.collectionVariables.set(key, value);",
+									"",
+									"var key = \"startAt\"",
+									"var value = pm.response.json().data.startAt",
+									"pm.collectionVariables.set(key, value);",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token_global={{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"backgroundColor\": \"#F4F5F6\",\n    \"color\": \"#81888D\",\n    \"description\": \"Филипов\",\n    \"title\": \"Ф Петров\",\n    \"startAt\": \"2023-07-02T12:00:00+05:00\",\n    \"endAt\": \"2023-07-02T12:30:00+05:00\",\n    \"id\": {{PersenalID}},\n    \"oldStartAt\": \"{{startAt}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}updatePersonal",
+							"host": [
+								"{{baseURL}}updatePersonal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Редактирование только даты (из настоящего в прошлое)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var key = \"PersenalID\"",
+									"var value = pm.response.json().data.payload.id",
+									"pm.collectionVariables.set(key, value);",
+									"",
+									"var key = \"startAt\"",
+									"var value = pm.response.json().data.startAt",
+									"pm.collectionVariables.set(key, value);",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token_global={{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"backgroundColor\": \"#F4F5F6\",\n    \"color\": \"#81888D\",\n    \"description\": \"Филипов 13\",\n    \"title\": \"Курсовая 2.0\",\n    \"startAt\": \"2023-02-27T12:00:00+05:00\",\n    \"endAt\": \"2023-02-27T12:30:00+05:00\",\n    \"id\": {{PersenalID}},\n    \"oldStartAt\": \"{{startAt}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}updatePersonal",
+							"host": [
+								"{{baseURL}}updatePersonal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Редактирование только описания",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var key = \"PersenalID\"",
+									"var value = pm.response.json().data.payload.id",
+									"pm.collectionVariables.set(key, value);",
+									"",
+									"var key = \"startAt\"",
+									"var value = pm.response.json().data.startAt",
+									"pm.collectionVariables.set(key, value);",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token_global={{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"backgroundColor\": \"#F4F5F6\",\n    \"color\": \"#81888D\",\n    \"description\": \"Ничего не успею\",\n    \"title\": \"Курсовая 2.0\",\n    \"startAt\": \"2023-07-02T12:00:00+05:00\",\n    \"endAt\": \"2023-07-02T12:30:00+05:00\",\n    \"id\": {{PersenalID}},\n    \"oldStartAt\": \"{{startAt}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}updatePersonal",
+							"host": [
+								"{{baseURL}}updatePersonal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Редактирование сразу всех параметров",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var key = \"PersenalID\"",
+									"var value = pm.response.json().data.payload.id",
+									"pm.collectionVariables.set(key, value);",
+									"",
+									"var key = \"startAt\"",
+									"var value = pm.response.json().data.startAt",
+									"pm.collectionVariables.set(key, value);",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token_global={{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"backgroundColor\": \"#FFF7C7\",\n    \"color\": \"#FAC641\",\n    \"description\": \"Скорееееее сдать курсовую\",\n    \"title\": \"Сделать курсовую\",\n    \"startAt\": \"2023-07-12T12:00:00+05:00\",\n    \"endAt\": \"2023-07-12T12:30:00+05:00\",\n    \"id\": {{PersenalID}},\n    \"oldStartAt\": \"{{startAt}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}updatePersonal",
+							"host": [
+								"{{baseURL}}updatePersonal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Редактирование без изменений",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var key = \"PersenalID\"",
+									"var value = pm.response.json().data.payload.id",
+									"pm.collectionVariables.set(key, value);",
+									"",
+									"var key = \"startAt\"",
+									"var value = pm.response.json().data.startAt",
+									"pm.collectionVariables.set(key, value);",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token_global={{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"backgroundColor\": \"#FFF7C7\",\n    \"color\": \"#FAC641\",\n    \"description\": \"Скорееееее сдать курсовую\",\n    \"title\": \"Сделать курсовую\",\n    \"startAt\": \"2023-07-12T12:00:00+05:00\",\n    \"endAt\": \"2023-07-12T12:30:00+05:00\",\n    \"id\": {{PersenalID}},\n    \"oldStartAt\": \"{{startAt}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}updatePersonal",
+							"host": [
+								"{{baseURL}}updatePersonal"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Удаление события",
+			"item": [
+				{
+					"name": "Удаление личного события",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token_global={{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": {{PersenalID}},\n    \"startAt\": \"{{startAt}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}removePersonal",
+							"host": [
+								"{{baseURL}}removePersonal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Удаление личного события повторно",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token_global={{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": {{PersenalID}},\n    \"startAt\": \"{{startAt}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}removePersonal",
+							"host": [
+								"{{baseURL}}removePersonal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Удаление личного события из прошлого",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token_global={{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"backgroundColor\": \"#F4F5F6\",\n    \"color\": \"#81888D\",\n    \"description\": \"Филипов 13\",\n    \"title\": \"Курсовая 2.0\",\n    \"startAt\": \"2023-02-27T12:00:00+05:00\",\n    \"endAt\": \"2023-02-27T12:30:00+05:00\",\n    \"id\": {{PersenalID}},\n    \"oldStartAt\": \"{{startAt}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}removePersonal",
+							"host": [
+								"{{baseURL}}removePersonal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Удаление личного события из будущего",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token_global={{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"backgroundColor\": \"#F4F5F6\",\n    \"color\": \"#81888D\",\n    \"description\": \"Филипов\",\n    \"title\": \"Ф Петров\",\n    \"startAt\": \"2023-07-02T12:00:00+05:00\",\n    \"endAt\": \"2023-07-02T12:30:00+05:00\",\n    \"id\": {{PersenalID}},\n    \"oldStartAt\": \"{{startAt}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}removePersonal",
+							"host": [
+								"{{baseURL}}removePersonal"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Невалидные тесты",
+			"item": [
+				{
+					"name": "Создание личного события с неустановленной Датой",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var key = \"PersenalID\"",
+									"var value = pm.response.json().data.payload.id",
+									"pm.collectionVariables.set(key, value);",
+									"",
+									"var key = \"startAt\"",
+									"var value = pm.response.json().data.startAt",
+									"pm.collectionVariables.set(key, value);",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token_global={{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"backgroundColor\": \"#F4F5F6\",\n    \"color\": \"#81888D\",\n    \"description\": \"Филипов\",\n    \"title\": \"Ф Петров\",\n    \"startAt\": \"\",\n    \"endAt\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}createPersonal",
+							"host": [
+								"{{baseURL}}createPersonal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Создание личного события с пустым названием",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var key = \"PersenalID\"",
+									"var value = pm.response.json().data.payload.id",
+									"pm.collectionVariables.set(key, value);",
+									"",
+									"var key = \"startAt\"",
+									"var value = pm.response.json().data.startAt",
+									"pm.collectionVariables.set(key, value);",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token_global={{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"backgroundColor\": \"#F4F5F6\",\n    \"color\": \"#81888D\",\n    \"description\": \"Филипов\",\n    \"title\": \"\",\n    \"startAt\": \"2023-06-26T13:00:00+05:00\",\n    \"endAt\": \"2023-06-26T13:30:00+05:00\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}createPersonal",
+							"host": [
+								"{{baseURL}}createPersonal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Создание личного события с некорректной Датой",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var key = \"PersenalID\"",
+									"var value = pm.response.json().data.payload.id",
+									"pm.collectionVariables.set(key, value);",
+									"",
+									"var key = \"startAt\"",
+									"var value = pm.response.json().data.startAt",
+									"pm.collectionVariables.set(key, value);",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token_global={{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"backgroundColor\": \"#F4F5F6\",\n    \"color\": \"#81888D\",\n    \"description\": \"Филипов\",\n    \"title\": \"Ф Петров\",\n    \"startAt\": \"2023-26-52T12:00:00+05:00\",\n    \"endAt\": \"2023-26-52T12:30:00+05:00\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}createPersonal",
+							"host": [
+								"{{baseURL}}createPersonal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Создание личного события с невалидными данными в  поле \"Описание\"",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var key = \"PersenalID\"",
+									"var value = pm.response.json().data.payload.id",
+									"pm.collectionVariables.set(key, value);",
+									"",
+									"var key = \"startAt\"",
+									"var value = pm.response.json().data.startAt",
+									"pm.collectionVariables.set(key, value);",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token_global={{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"backgroundColor\": \"#F4F5F6\",\n    \"color\": \"#81888D\",\n    \"description\": \"Товарищи! консультация с широким активом влечет за собой процесс внедрения и модернизации существенных финансовых и административных условий. Равным образом реализация намеченных плановых заданий позволяет выполнять важные задания по разработке системы обучения кадров, соответствует насущным потребностям. Равным образом реализация намеченных плановых заданий требуют определения и уточнения дальнейших направлений развития. Товарищи! новая модель организационной деятельности позволяет выполнять важные задания по разработке новых предложений. Не следует, однако забывать, что постоянный количественный рост и сфера нашей активности влечет за собой процесс внедрения и модернизации соответствующий условий активизации. Идейные соображения высшего порядка, а также постоянный количественный рост и сфера нашей активности играет важную роль в формировании новых предложений.\",\n    \"title\": \"Ф Петров\",\n    \"startAt\": \"2023-06-27T15:00:00+05:00\",\n    \"endAt\": \"2023-06-27T15:30:00+05:00\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}createPersonal",
+							"host": [
+								"{{baseURL}}createPersonal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Создание личного события с невалидыми данными в Названии",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var key = \"PersenalID\"",
+									"var value = pm.response.json().data.payload.id",
+									"pm.collectionVariables.set(key, value);",
+									"",
+									"var key = \"startAt\"",
+									"var value = pm.response.json().data.startAt",
+									"pm.collectionVariables.set(key, value);",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token_global={{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"backgroundColor\": \"#F4F5F6\",\n    \"color\": \"#81888D\",\n    \"description\": \"Филипов\",\n    \"title\": \"Ф Петров 12121212321232123233232343545675687534565324543234676543456765432346543234665323456653465432346\",\n    \"startAt\": \"2023-06-27T15:00:00+05:00\",\n    \"endAt\": \"2023-06-27T15:30:00+05:00\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}createPersonal",
+							"host": [
+								"{{baseURL}}createPersonal"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ссыль",
+			"item": [
+				{
+					"name": "Удаление личного события",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token_global={{token}} ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": {{PersenalID}},\n    \"startAt\": \"{{startAt}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}removePersonal",
+							"host": [
+								"{{baseURL}}removePersonal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Редактирование личного события",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var key = \"PersenalID\"",
+									"var value = pm.response.json().data.payload.id",
+									"pm.collectionVariables.set(key, value);",
+									"",
+									"var key = \"startAt\"",
+									"var value = pm.response.json().data.startAt",
+									"pm.collectionVariables.set(key, value);",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token_global={{token}} ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"backgroundColor\": \"#FFF7C7\",\n    \"color\": \"#FAC641\",\n    \"description\": \"12345\",\n    \"title\": \"12345\",\n    \"startAt\": \"2023-06-26T08:00:00+00:00\",\n    \"endAt\": \"2023-06-26T13:30:00+05:00\",\n    \"id\": {{PersenalID}},\n    \"oldStartAt\": \"{{startAt}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}updatePersonal",
+							"host": [
+								"{{baseURL}}updatePersonal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Создание личного  события",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var key = \"PersenalID\"",
+									"var value = pm.response.json().data.payload.id",
+									"pm.collectionVariables.set(key, value);",
+									"",
+									"var key = \"startAt\"",
+									"var value = pm.response.json().data.startAt",
+									"pm.collectionVariables.set(key, value);",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token_global={{token}} ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"backgroundColor\": \"#F4F5F6\",\n    \"color\": \"#81888D\",\n    \"description\": \"12345\",\n    \"title\": \"12345\",\n    \"startAt\": \"2023-06-26T15:00:00+05:00\",\n    \"endAt\": \"2023-06-26T15:30:00+05:00\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}createPersonal",
+							"host": [
+								"{{baseURL}}createPersonal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Получение расписания",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token_global={{token}} ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2023-06-26T02:00:00+05:00\", \n    \"till\": \"2023-07-02T02:00:00+05:00\",\n    \"onlyTypes\": []\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}events",
+							"host": [
+								"{{baseURL}}events"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "https://api-teachers.skyeng.ru/v2/schedule/",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1c2VySWQiOjEwMzM4NzM2LCJpZGVudGl0eSI6InRlc3QtbW9iaWxlMUBza3llbmcucnUiLCJpZGVudGl0eUxvZ2luIjpudWxsLCJpZGVudGl0eUVtYWlsIjoidGVzdC1tb2JpbGUxQHNreWVuZy5ydSIsImlkZW50aXR5UGhvbmUiOiIrMTkwOTkwOTMzMzMiLCJuYW1lIjoiSm9obiIsInN1cm5hbWUiOiJMZW5ub24iLCJlbWFpbCI6InRlc3QtbW9iaWxlMUBza3llbmcucnUiLCJ1aUxhbmd1YWdlIjoicnUiLCJsb2NhbGUiOiJydSIsInNlcnZpY2VMb2NhbGUiOm51bGwsInVhcyI6MzAsImp3dFR5cGUiOjEsImp0aSI6ImU4QXVZVGIyakJyTndBTUtaUXkySXQwM2ZGVlNyMDZ0IiwiYnJhbmQiOm51bGwsImV4cCI6MTY4Nzk3NTQyNywiYXZhdGFyVXJsIjoiaHR0cHM6XC9cL2F1dGgtYXZhdGFycy1za3llbmcuaW1naXgubmV0XC8xMDMzODczNlwvZTllMDc0YTQtMmM3My00NzhhLWI3YzItMTc4ZGI0ZjUwODY3P2F1dG89Zm9ybWF0JTJDZW5oYW5jZSZmaXQ9Y3JvcCZoPTIwMCZpeGxpYj1waHAtMi4xLjEmcT03NSZzYXQ9OCZzaGFycD0xMCZ2aWI9OCZ3PTIwMCIsImJpcnRoZGF5IjoiMTk0MC0xMC0wOSIsImFJc1N0cm9uZyI6dHJ1ZSwiYVR5cGUiOiJVU0VSTkFNRV9QQVNTV09SRCIsImFUaW1lIjoxNjg3ODg5MDE5LCJyb2xlcyI6WyJST0xFX1RFQUNIRVIiLCJST0xFX0NSTTJfVEVBQ0hFUl9BQ0NFU1MiLCJST0xFX1RUQ19VU0FHRSIsIlJPTEVfVklNQk9YX1RFQUNIRVJfVVNBR0UiLCJST0xFX01BVEhfVEVBQ0hFUiIsIlJPTEVfTUFUSF9DT05URU5UX1RIRU1FX1ZJRVciLCJST0xFX0VTU0FZX0lOU1BFQ1RPUl9URUFDSEVSIl19.d0MYa0UXzljCAX6E8fKf96WeE4fS0qRsOZwpKewuASa-ty2fCuauZwo4m5ZcN6MXpFjoCwpYgzVR90gRLnhbQDQZxbtINPXk3B3TKHxGrq5Tkwr-n0bu5SvyfczfwNFEOVCJqgXAdhaDw2EdXz-6Lqk-6Cgyfz3cj87sV3Bbuw7pu5rnr4Zh1Gngg-pETuvaxkUX5NxLtC1ZI4gkRFiwMG9JRM9F3bcM3Deb2XJ_QXSNYkscek4U1dfhfqcE0DuY3sfts--bUskpqPRLc44Wxv3jPHNR5c9yk0gLcc0dFIwcNeuuN9KILZFLMd4uH7_rZKqkBfPZV6LcxX7HnJjEpZS5KYHIOhv6DvxkqddUd8YEdLf_UkDwn2hnjmA7-nqMKmuUoVQGvz4arMahsOkf28vJmACEVKHWJMgR2ZE8amoXvRj9YkLDLS5PhnEvOBC3BMRlRd513gHVdjqOC2uH3rYtttGh1EWpH-IQHoCUzOE25z0cVuNla8os5VwmWqFxszse_AJXPgFyNqJZY5S3GBsmnddn61-vnRMTX_3sMzM4L-_IXWYCc4IwMOKpro7nyZI1xLrIf_n_MdfTNldt8rtsl057ms1SOqGt2d0dx_G8h_qGxR3yq1HvCxm-a0YUN_qD85glcB-AGy846jxFJNr4ZcNQFTn-tA6FSjock3U; session_teachers_cabinet=qnmkg9q61rqct9o8jl9o6344cl; amplitude_id_ef9dd375ed875487462b31c2bbac3d1fskyeng.ru=eyJkZXZpY2VJZCI6IjQxMDBjNTRlLWU3NGYtNDM1MS1hYWFiLTdkZjYyYzBiZTNkN1IiLCJ1c2VySWQiOiIxMDMzODczNiIsIm9wdE91dCI6ZmFsc2UsInNlc3Npb25JZCI6MTY4Nzg4OTAyMzA0MiwibGFzdEV2ZW50VGltZSI6MTY4Nzg5MTM5OTU2MCwiZXZlbnRJZCI6MCwiaWRlbnRpZnlJZCI6MCwic2VxdWVuY2VOdW1iZXIiOjB9",
+			"type": "string"
+		},
+		{
+			"key": "PersenalID",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "startAt",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
